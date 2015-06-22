@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>DCompiler-DocuMat</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">			
+		<link href="css/main.css" rel="stylesheet">			
 	</head>
 	<body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -36,27 +37,31 @@
         </div><!--/.nav-collapse -->
       </div>
 	  </nav>
-		<h1>DCompiler - DocuMat</h1>
-		<div class="container">
-			<div class="col-md-5">
-				<div class="form-area">					
-						<br style="clear:both">
-						<h3 style="margin-bottom: 25px; text-align: center;">Block 1</h3>
-						<div class="form-group">
-							<input type="text" class="form-control" id="head" name="name" placeholder="Heading" required>
-						</div>						
-						<div class="form-group">
-							<textarea class="form-control" type="textarea" id="data" placeholder="Content" rows="15" required></textarea>  
-						</div>           
-						<button id="save" onclick="save();return false;" class="btn btn-primary pull-right">Save</button>  
-						<button type="button" onclick="addElement();" class="btn btn-primary pull-right">Add</button>					
+	<div id="response" class="container">
+		
+			<div class="row vertical-center-row">
+				<div class="col-xs-4 col-xs-offset-4">
+					<div class="form-area">					
+							<br style="clear:both">
+							<h3 style="margin-bottom: 25px; text-align: center; font-weight: bold">Block ID</h3>
+							<div class="form-group">
+								<input type="text" class="form-control" id="head" name="name" placeholder="Heading" required>
+							</div>						
+							<div class="form-group">
+								<textarea class="form-control" type="textarea" id="data" placeholder="Content" rows="15" required></textarea>  
+							</div>           
+							<button id="save" onclick="save();return false;" class="btn btn-primary pull-right">Save</button>  
+							<button type="button" onclick="addElement();" class="btn btn-primary pull-right">Add</button>			
+					</div>
 				</div>
+			</div>		
+	</div>
+		<div class="container"  style="padding:10px">
+			<div class="row vertical-center-row">
+				<input type="hidden" value="0" id="theValue" />		
+				<div id="myDiv"> </div>
 			</div>
 		</div>
-		
-		<input type="hidden" value="0" id="theValue" />		
-		<div id="myDiv"> </div>
-		
 		<footer class="footer">
 			<div class="container">
 				<p class="text-muted text-center">BETA v1.1.8</p>
