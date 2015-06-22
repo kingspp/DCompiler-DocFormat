@@ -1,6 +1,7 @@
 <?php
 //error_reporting(E_ALL);
 //var_dump($_SERVER);
+$post_head = $_POST['head'];
 $post_data = $_POST['data'];
 if (!empty($post_data)) {
     //$dir = 'D:/';
