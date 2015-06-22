@@ -1,3 +1,14 @@
+function addTextBox(){
+var element = document.createElement("input");
+
+element.setAttribute("type", "text");
+element.setAttribute("value", "");
+element.setAttribute("name", "Test Name");
+element.setAttribute("style", "width:200px");
+var foo = document.getElementById("filterContent");
+foo.appendChild(element);
+}
+
 function save(){
 	var response=document.getElementById("response");
 	var data = 'data='+document.getElementById("data").value;
