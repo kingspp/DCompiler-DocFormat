@@ -5,13 +5,13 @@ $post_head = $_POST['head'];
 $post_data = $_POST['data'];
 $post_head=str_replace("head=","",$post_head);
 $post_data=str_replace("data=","",$post_data);
+
 if (!empty($post_data)) {
-    //$dir = 'D:/';
+    $dir = 'files/';
     $file = uniqid().getmypid();
-    $filename = $file.'.txt';
+    $filename = $dir.$post_head.'.txt';
     $handle = fopen($filename, "w");
     fwrite($handle, $post_data);
     fclose($handle);
-    echo $file;
-}
+    echo $dir.$post_head;}
 ?>
