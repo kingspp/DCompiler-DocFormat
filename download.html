@@ -1,0 +1,72 @@
+<html>
+<head>
+	<style>
+	html, body
+	{
+    height: 100%;
+    margin:0;
+    padding:0;
+	}
+
+div {
+    position:relative;
+    height: 100%;
+    width:100%;
+}
+
+#loading {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+
+#mydiv {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    
+    
+    
+    
+    
+}
+
+	</style>
+	<script src="js/jquery.js"></script>
+	<script>
+	$(document).ready(function() {
+		setTimeout(function(){
+			$('#mydiv').hide();
+			window.location='download.php';
+			
+		}, 5000);
+		setTimeout(function(){
+			$('#mydiv').hide();
+			window.location.replace("http://localhost");			
+		}, 7000);
+		
+			$('#mydiv').show();
+		
+
+	});
+	</script>
+</head>
+
+<body>
+	<div id="mydiv" >
+    <p><b>Loading Please Wait....</b></p>
+    <img src="img/ajax-loader.gif" alt="Loading" width="350px"/>
+	</div>
+	
+	
+</body>
+</html>

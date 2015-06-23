@@ -1,4 +1,4 @@
-var version = "BETA 1.4.1";
+var version = "BETA 2.0.0";
 
 function save(){
 	var response=document.getElementById("response");	
