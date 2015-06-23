@@ -163,6 +163,12 @@
                 </div>
             </div>
         </div>
+		
+		<footer class="footer">
+			<div class="container">
+				<p class="text-muted text-center">BETA v1.2.8</p>
+			</div>
+		</footer>
 
     </body>
 
