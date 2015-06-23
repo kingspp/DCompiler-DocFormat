@@ -1,0 +1,30 @@
+body > .container {
+	padding: 60px 15px;
+	display: table;
+    vertical-align: middle;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #1A1A1A;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+  color: #FFF;
+  font-weight : bold;  
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
