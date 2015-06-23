@@ -4,7 +4,12 @@
 $post_head = $_POST['head'];
 $post_data = $_POST['data'];
 $post_head=str_replace("head=","",$post_head);
+$post_head = str_replace(' ', '', $post_head);
 $post_data=str_replace("data=","",$post_data);
+$arr = str_split($post_data);
+array_shift($arr);
+$post_data   = implode('', $arr);
+
 
 if (!empty($post_data)) {
     $dir = 'files/';
