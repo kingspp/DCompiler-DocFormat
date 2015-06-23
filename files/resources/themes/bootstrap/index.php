@@ -49,7 +49,7 @@
               <a href="/files" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Files <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/files">List</a></li>
-                <li><a href="del.php">Delete Files</a></li>
+                <li><a href="../del.php">Delete Files</a></li>
                 
               </ul>
             </li>
@@ -173,7 +173,7 @@
 		
 		<footer class="footer">
 			<div class="container">
-				<p class="text-muted text-center">BETA v1.2.8</p>
+				<p class="text-muted text-center">BETA v1.3.1</p>
 			</div>
 		</footer>
 
