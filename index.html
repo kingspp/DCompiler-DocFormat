@@ -39,8 +39,8 @@
 	  </nav>
 	<div id="response" class="container">
 		
-			<div class="row vertical-center-row">
-				<div class="col-xs-4 col-xs-offset-4">
+			<div class="row">
+				<div class="col-md-6">
 					<div class="form-area">					
 							<br style="clear:both">
 							<h3 style="margin-bottom: 25px; text-align: center; font-weight: bold">Block ID</h3>
@@ -51,26 +51,32 @@
 								<textarea class="form-control" type="textarea" id="data" placeholder="Content" rows="15" required></textarea>  
 							</div>           
 							<button id="save" onclick="save();return false;" class="btn btn-primary pull-right">Save</button>  
-							<button type="button" onclick="addElement();" class="btn btn-primary pull-right">Add</button>			
+									
 					</div>
+				</div>
+				<div class="col-md-4">
+					<br style="clear:both">
+					<h3 style="margin-bottom: 25px; text-align: center; font-weight: bold">Files on Server</h3>
+					<input type="hidden" value="0" id="theValue" />		
+					<div id="myDiv"> </div>
+					<button type="button" onclick="addElement();" class="btn btn-primary pull-right">Finish</button>	
 				</div>
 			</div>		
 	</div>
 		<div class="container"  style="padding:10px">
 			<div class="row vertical-center-row">
-				<input type="hidden" value="0" id="theValue" />		
-				<div id="myDiv"> </div>
+				
+				
 			</div>
 		</div>
 		<footer class="footer">
 			<div class="container">
-				<p class="text-muted text-center">BETA v1.2.0</p>
+				<p class="text-muted text-center">BETA v1.2.2</p>
 			</div>
 		</footer>
 		
 		<script src="js/main.js"></script> 							
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		
+		<script src="js/bootstrap.min.js"></script>		
 	</body>
 </html>
