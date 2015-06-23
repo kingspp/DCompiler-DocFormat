@@ -14,6 +14,11 @@ function save(){
 		newdiv.setAttribute('id',divIdName);		
 	    newdiv.innerHTML='<a href="/'+xmlhttp.responseText+'.txt">'+xmlhttp.responseText+'.txt</a>';
 		ni.appendChild(newdiv); 
+		document.getElementsByName("head")[0].value="";
+		document.getElementsByName('head')[0].placeholder='Heading';
+		document.getElementsByName("data")[0].value="";
+		document.getElementsByName('data')[0].placeholder='Content';
+		
 	  }
 	}
 	xmlhttp.open("POST","write.php",true);
