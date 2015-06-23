@@ -31,30 +31,34 @@
 
     <body>
 
-        <div id="page-navbar" class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-
-                <?php $breadcrumbs = $lister->listBreadcrumbs(); ?>
-
-                <p class="navbar-text">
-                    <?php foreach($breadcrumbs as $breadcrumb): ?>
-                        <?php if ($breadcrumb != end($breadcrumbs)): ?>
-                                <a href="<?php echo $breadcrumb['link']; ?>"><?php echo $breadcrumb['text']; ?></a>
-                                <span class="divider">/</span>
-                        <?php else: ?>
-                            <?php echo $breadcrumb['text']; ?>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </p>
-
-                <div class="navbar-right">
-                    <ul id="page-top-nav" class="nav navbar-nav">
-                        <li><a href="javascript:void(0)" id="page-top-link"><i class="fa fa-arrow-circle-up fa-lg"></i></a></li>
-                    </ul>
-                </div>
-
-            </div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">DCompiler- DocuMat</a>
         </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../">Home</a></li>		    
+			<li class="active dropdown">
+              <a href="/files" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Files <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/files">List</a></li>
+                <li><a href="del.php">Delete Files</a></li>
+                
+              </ul>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>           
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+	  </nav>
 
         <div id="page-content" class="container">
 
