@@ -1,3 +1,5 @@
+var version = "BETA 1.4.1";
+
 function save(){
 	var response=document.getElementById("response");	
 	var data = 'data='+document.getElementById("data").value;
@@ -27,3 +29,11 @@ function save(){
 	xmlhttp.send( "head= "+head+
               "&data= "+data); 
 }
+
+function codeAddress() {
+		
+        var footer=document.getElementById("footer");
+		footer.innerHTML='<p class="text-center text-muted" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;"><b>'+version+'</b></p>';
+        }
+		
+window.onload = codeAddress;
