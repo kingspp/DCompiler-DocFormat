@@ -1,6 +1,8 @@
-var version = "BETA v2.0.1";
-
+var version = "BETA v2.0.2";
+var empty = 1;
 function save(){
+	if(empty == 1){$('#myDiv').empty(); empty=0;}
+	
 	var response=document.getElementById("response");	
 	var data = 'data='+document.getElementById("data").value;
 	var head = 'head='+document.getElementById("head").value;	
@@ -34,6 +36,7 @@ function codeAddress() {
 		
         var footer=document.getElementById("footer");
 		footer.innerHTML='<p class="text-center text-muted" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;"><b>'+version+'</b></p>';
+		$('#myDiv').load('php/readDir.php')
         }
 		
 window.onload = codeAddress;
