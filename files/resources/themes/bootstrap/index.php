@@ -4,7 +4,7 @@
 
     <head>
 
-        <title>Directory listing of <?php echo $lister->getListedPath(); ?></title>
+        <title>Files <?php echo $lister->getListedPath(); ?></title>
         <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/folder.png">
 
         <!-- STYLES -->
@@ -31,7 +31,7 @@
 
     <body>
 
-        <nav class="navbar navbar-default navbar-fixed-top">
+       <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -128,9 +128,16 @@
 
             </ul>
         </div>
-
+		<div class="container">		
+			<div class ="row">
+				<div class="col-md-6">
+					<button type="button" onclick="window.location='../';" class="btn btn-primary ">Back</button>	
+					<button type="button" onclick="window.location='/files';" class="btn btn-primary ">Finish</button>	
+				</div>
+			</div>
+		</div>
         <?php file_exists('footer.php') ? include('footer.php') : include($lister->getThemePath(true) . "/default_footer.php"); ?>
-
+		
         <div id="file-info-modal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">

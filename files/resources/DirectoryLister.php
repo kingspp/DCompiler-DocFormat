@@ -22,7 +22,7 @@ class DirectoryLister {
     protected $_themeName     = null;
     protected $_directory     = null;
     protected $_appDir        = null;
-    protected $_appURL        = null;
+    protected $_appURL        = 'http://localhost';
     protected $_config        = null;
     protected $_fileTypes     = null;
     protected $_systemMessage = null;
