@@ -1,4 +1,4 @@
-var version = "BETA 2.0.0";
+var version = "BETA v2.0.1";
 
 function save(){
 	var response=document.getElementById("response");	
@@ -23,7 +23,7 @@ function save(){
 		
 	  }
 	}
-	xmlhttp.open("POST","write.php",true);
+	xmlhttp.open("POST","php/write.php",true);
         //Must add this request header to XMLHttpRequest request for POST
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send( "head= "+head+

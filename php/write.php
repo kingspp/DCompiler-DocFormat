@@ -12,7 +12,7 @@ $post_data   = implode('', $arr);
 
 
 if (!empty($post_data)) {
-    $dir = 'files/';
+    $dir = '../files/';
     $file = uniqid().getmypid();
     $filename = $dir.$post_head.'.txt';
     $handle = fopen($filename, "w");

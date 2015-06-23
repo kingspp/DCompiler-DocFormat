@@ -1,11 +1,11 @@
 <?php
-require_once 'phpword/src/PhpWord/Autoloader.php';
+require_once '../phpword/src/PhpWord/Autoloader.php';
 \PhpOffice\PhpWord\Autoloader::register();
 
 // Creating the new document...
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
-$dir="files/";
+$dir="../files/";
 $format=".txt";
 $filename = "abcd";
 $file=$dir.$filename.$format;

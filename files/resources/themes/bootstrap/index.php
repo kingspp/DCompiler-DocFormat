@@ -132,7 +132,7 @@
 			<div class ="row">
 				<div class="col-md-6">
 					<button type="button" onclick="window.location='../';" class="btn btn-primary ">Back</button>	
-					<button type="button" onclick="window.location='../pword.php';" class="btn btn-primary ">Next</button>	
+					<button type="button" onclick="window.location='../php/pword.php';" class="btn btn-primary ">Next</button>	
 				</div>
 			</div>
 		</div>
