@@ -1,4 +1,4 @@
-var version = "BETA v2.0.3";
+var version = "BETA v2.1.0";
 var empty = 1;
 function save(){
 	if(empty == 1){$('#myDiv').empty(); empty=0;}
