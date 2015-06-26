@@ -43,7 +43,5 @@ for ($x = 0; $x < $rows; $x++){
 // Saving the document as OOXML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 $objWriter->save('Table.docx');
-
 header("Refresh: 1; url=http://localhost/");
-
 ?>

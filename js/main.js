@@ -1,8 +1,30 @@
-var version = "BETA v2.1.3";
-
+var version = "BETA v2.1.5";
 var empty = 1;
 var id=1;
 
+var defT=0;
+var defI=0;
+$("#tableBtn").click(function(){
+	if(defT==0){
+        $("#rcinput").show();
+		defT=1;
+	}
+	else{
+		$("#rcinput").hide();
+		defT=0;
+	}
+});
+
+$("#imageBtn").click(function(){
+	if(defI==0){
+        $("#imginput").show();
+		defI=1;
+	}
+	else{
+		$("#imginput").hide();
+		defI=0;
+	}
+});
 
 function save(){
 	if(empty == 1){$('#myDiv').empty(); empty=0;}
@@ -38,26 +60,27 @@ function save(){
 
 function table(){
 	var table = document.getElementById("table");
-	table.innerHTML='<input type="text" style="width:40%;" class="form-control" id="rows" name="rows" placeholder="Rows" >'
-	+'<input type="text" class="form-control" id="columns" name="columns" placeholder="Column" style="width:40%;">'
+	table.innerHTML=//'<form id="tableCreate">'+
+	'<input type="number" style="width:40%;" class="form-control" id="rows" name="rows" placeholder="Rows" >'
+	+'<input type="number" class="form-control" id="columns" name="columns" placeholder="Column" style="width:40%;">'	
 	+'<button id="create" onclick="create();" class="btn btn-default btn-lg pull-right">Create</button>';
 	}
-	
+		
 function create() {
-	var table = document.getElementById("table");
+	var table = document.getElementById("rcinput");
 	var rows = parseInt(document.getElementById('rows').value);
 	var cols = parseInt(document.getElementById('columns').value);
     if (rows <= 0 || cols <= 0)
         return false;
 
-    var html = '<form id="contact_form" action="php/table.php" method="POST" enctype="multipart/form-data">'
-	+'<input type="text" class="form-control" value='+rows+' name="row"  style="background-color:#000; display:none;"><br>'
+    var html = '<form id="contact_form" action="php/table.php" method="POST" enctype="multipart/form-data">'+
+	'<input type="text" class="form-control" value='+rows+' name="row"  style="background-color:#000; display:none;"><br>'
 	+'<input type="text" class="form-control" value='+cols+' name="col" style="background-color:#000; display:none;"><br>'
 	+'<table>';
     for (i=0;i<rows;i++) {
         html += '<tr>';
         for (j=0;j<cols;j++) {
-		html += '<td>  <input type="text" class="form-control" name='+id+' size="20" id='+id+'></td>';
+		html += '<td>  <input type="text" class="form-control" name='+id+' size="20" id='+id+' required></td>';
 		id = id+1;
         }
         html += '</tr>';		
@@ -68,11 +91,11 @@ function create() {
     table.innerHTML = html;
 }
 
-function loadFun() {
-		
+function loadFun() {		
         var footer=document.getElementById("footer");
 		footer.innerHTML='<p class="text-center text-muted" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;"><b>'+version+'</b></p>';
-		$('#myDiv').load('php/readDir.php')
-        }
-		
+		$('#myDiv').load('php/readDir.php');
+		//Not yet working
+		//$("#tableCreate").submit(function(e){e.preventDefault();create();});		
+        }		
 window.onload = loadFun;

@@ -17,9 +17,11 @@
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">	
+	<link href="css/fdrag.css" rel="stylesheet">	
+	<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom Fonts 
-    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"> -->
 
@@ -130,7 +132,30 @@
 						</div>           
 						<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>
 						<div id="table" style="padding-top:70px;">
-						<a href="#documat" onClick="table();"><b>Tabular input<b></a>						
+							<button id="tableBtn" class="btn btn-default btn-sg">Tabular Input</button>
+							<div id="rcinput" style="display:none; padding-top:30px;">
+								<input type="number" style="width:40%;" class="form-control" id="rows" name="rows" placeholder="Rows" >
+								<input type="number" class="form-control" id="columns" name="columns" placeholder="Column" style="width:40%;">	
+								<button id="create" onclick="create();" class="btn btn-default btn-lg pull-right">Create</button>
+							</div>
+						</div>
+						<div id="image" style="padding-top:25px;">
+							<button id="imageBtn" class="btn btn-default btn-sg">Image Upload</button>
+							<div id="imginput" style="display:none; padding-top:30px;">
+								<form id="upload" action="php/upload.php" method="POST" enctype="multipart/form-data">
+									<fieldset>										
+										<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+										<div>
+											<label for="fileselect">Files to upload:</label>
+											<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+											<div id="filedrag">or drop files here</div>
+										</div>
+										<div id="submitbutton">
+											<button type="submit" class="btn btn-default btn-sg ">Upload Files</button>
+										</div>
+									</fieldset>
+								</form>								
+							</div>
 						</div>
 					</div>
 				</div>
@@ -192,6 +217,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
+	<script src="js/filedrag.js"></script>
 	<script src="js/main.js"></script> 
 
 </body>
