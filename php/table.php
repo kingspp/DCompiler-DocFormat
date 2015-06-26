@@ -4,8 +4,8 @@ require_once '../phpword/src/PhpWord/Autoloader.php';
 $rows=$_REQUEST["row"];
 $cols=$_REQUEST["col"];
 //Write Table if needed
+$id=1;
 /*
-
 $id=1;
 $dir = '../files/';
 $filename = $dir.'table.txt';
@@ -34,10 +34,16 @@ $table = $section->addTable('Fancy Table');
 for ($x = 0; $x < $rows; $x++){
     $table->addRow();
    for ($y = 0; $y < $cols; $y++){
-        $table->addCell(1750)->addText(htmlspecialchars($data[$x][$y]), $fontStyle);
+		if ($x==0)
+			$table->addCell(1750)->addText(htmlspecialchars($_REQUEST[$id++]), $fontStyle);
+		else
+			$table->addCell(1750)->addText(htmlspecialchars($_REQUEST[$id++]), null);
     }
 }
 // Saving the document as OOXML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 $objWriter->save('Table.docx');
+
+header("Refresh: 1; url=http://localhost/");
+
 ?>
