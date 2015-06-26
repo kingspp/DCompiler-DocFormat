@@ -1,6 +1,7 @@
-var version = "BETA v2.1.2";
+var version = "BETA v2.1.3";
 
 var empty = 1;
+var id=1;
 
 
 function save(){
@@ -56,7 +57,8 @@ function create() {
     for (i=0;i<rows;i++) {
         html += '<tr>';
         for (j=0;j<cols;j++) {
-		html += '<td>  <input type="text" class="form-control" name='+i+j+' size="20" id='+i+j+'></td>';
+		html += '<td>  <input type="text" class="form-control" name='+id+' size="20" id='+id+'></td>';
+		id = id+1;
         }
         html += '</tr>';		
     }
