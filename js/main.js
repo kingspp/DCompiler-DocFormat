@@ -1,5 +1,8 @@
-var version = "BETA v2.1.0";
+var version = "BETA v2.1.2";
+
 var empty = 1;
+
+
 function save(){
 	if(empty == 1){$('#myDiv').empty(); empty=0;}
 	
@@ -30,6 +33,37 @@ function save(){
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send( "head= "+head+
               "&data= "+data); 
+}
+
+function table(){
+	var table = document.getElementById("table");
+	table.innerHTML='<input type="text" style="width:40%;" class="form-control" id="rows" name="rows" placeholder="Rows" >'
+	+'<input type="text" class="form-control" id="columns" name="columns" placeholder="Column" style="width:40%;">'
+	+'<button id="create" onclick="create();" class="btn btn-default btn-lg pull-right">Create</button>';
+	}
+	
+function create() {
+	var table = document.getElementById("table");
+	var rows = parseInt(document.getElementById('rows').value);
+	var cols = parseInt(document.getElementById('columns').value);
+    if (rows <= 0 || cols <= 0)
+        return false;
+
+    var html = '<form id="contact_form" action="php/table.php" method="POST" enctype="multipart/form-data">'
+	+'<input type="text" class="form-control" value='+rows+' name="row"  style="background-color:#000; display:none;"><br>'
+	+'<input type="text" class="form-control" value='+cols+' name="col" style="background-color:#000; display:none;"><br>'
+	+'<table>';
+    for (i=0;i<rows;i++) {
+        html += '<tr>';
+        for (j=0;j<cols;j++) {
+		html += '<td>  <input type="text" class="form-control" name='+i+j+' size="20" id='+i+j+'></td>';
+        }
+        html += '</tr>';		
+    }
+    html += '</table>'+
+	'<input id="submit_button" class="btn btn-default btn-lg pull-right" type="submit" value="Save" />'+
+	'</form>';
+    table.innerHTML = html;
 }
 
 function loadFun() {

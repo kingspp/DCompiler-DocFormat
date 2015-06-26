@@ -1,0 +1,33 @@
+<style type="text/css">
+td{min-width:100px;min-height:20px;border:solid 1px #000;}
+</style>
+
+<script type="text/javascript">
+window.onload = function() {
+    document.getElementById('btnCreate').addEventListener('click', function(){
+        var rows = parseInt(document.getElementById('txtRows').value),
+            cols = parseInt(document.getElementById('txtCols').value);
+        create(rows,cols);
+    });
+}
+
+function create(rows, cols) {
+    if (rows <= 0 || cols <= 0)
+        return false;
+
+    var html = '<table>';
+    for (i=0;i<rows;i++) {
+        html += '<tr>';
+        for (j=0;j<cols;j++) {
+		html += '<td>  <INPUT TYPE="TEXT" NAME="name" SIZE="20" ID='+i+j+'></td>';
+        }
+        html += '</tr>';
+    }
+    html += '</table>';
+    document.getElementsByTagName('body')[0].innerHTML = html;
+}
+</script>
+
+rows: <input type="text" id="txtRows" /><br/>
+cols: <input type="text" id="txtCols" /><br/>
+<input type="button" value="create table" id="btnCreate" />

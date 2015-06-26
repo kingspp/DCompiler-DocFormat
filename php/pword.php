@@ -1,6 +1,8 @@
 <?php
 require_once '../phpword/src/PhpWord/Autoloader.php';
 \PhpOffice\PhpWord\Autoloader::register();
+\PhpOffice\PhpWord\Settings::setPdfRendererPath('tcpdf');
+\PhpOffice\PhpWord\Settings::setPdfRendererName('TCPDF');
 
 // Creating the new document...
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
@@ -74,6 +76,18 @@ $section->addText(htmlspecialchars($read[4]),'nFont','nStyle');
 // Saving the document as OOXML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 $objWriter->save('Report.docx');
+
+// Saving the document as HTML file...
+$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
+$objWriter->save('Report.html');
+
+/*
+//Load temp file
+$phpWord = \PhpOffice\PhpWord\IOFactory::load('Report.docx'); 
+
+$xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord , 'PDF');
+$xmlWriter->save('Report.pdf');  
+*/
 /*
 for ($x = 0; $x < 3; $x++){		
 	echo $read[$x].'<br><br>';

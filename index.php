@@ -18,10 +18,10 @@
     <link href="css/grayscale.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">	
 
-    <!-- Custom Fonts -->
+    <!-- Custom Fonts 
     <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -128,7 +128,10 @@
 						<div class="form-group">
 							<textarea class="form-control" type="textarea" name="data" id="data" placeholder="Content" rows="15" required></textarea>  
 						</div>           
-						<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>							
+						<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>
+						<div id="table" style="padding-top:70px;">
+						<a href="#documat" onClick="table();"><b>Tabular input<b></a>						
+						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -184,8 +187,8 @@
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>-->
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
