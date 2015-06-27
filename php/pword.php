@@ -23,22 +23,38 @@ $phpWord->addNumberingStyle(
 
 $dir="../files/";
 $format=".txt";
-$filename = array("Title", "Abstract", "Introduction", "Acknowledgment", "References");	
-$read = array("","","","","");
-$xmax=5;
+$id=0;
+$handle = fopen("../php/sort.txt", "r");
+if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        // process the line read.
+		$name[$id++] = $line;
+    }
+
+    fclose($handle);
+} else {
+    // error opening the file.
+} 
+
+
+
+for($i=0; $i<sizeof($name);$i++){
+	$name[$i]=preg_replace('/\s+/', '', $name[$i]);
+	//echo $name[$i];
+	}
+
+
+
 //$file=$dir.$filename.$format;
 //$fh = fopen($file,'r') or die($php_errormsg);
 //$read = fread($fh,filesize($file));
-for ($x = 0; $x < $xmax; $x++) {
+for ($x = 0; $x < sizeof($name); $x++) {
     //echo $dir.$files[$x].$format;
-	$myfile = fopen($dir.$filename[$x].$format, "r");
-	$read[$x]= fread($myfile,filesize($dir.$filename[$x].$format));
+	$myfile = fopen($dir.$name[$x].$format, "r");
+	$read[$x]= fread($myfile,filesize($dir.$name[$x].$format));
 }
 
-$filler = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-        . 'Nulla fermentum, tortor id adipiscing adipiscing, tortor turpis commodo. '
-        . 'Donec vulputate iaculis metus, vel luctus dolor hendrerit ac. '
-        . 'Suspendisse congue congue leo sed pellentesque.';
+
 
 // Normal
 $section = $phpWord->addSection();
@@ -54,21 +70,18 @@ $section = $phpWord->addSection(
     )
 );
 
+
 $section->addText(htmlspecialchars("Abstract-{$read[1]}"),'aFont');
 $section->addTextBreak(2);
-$section->addListItem('Introduction', 0, 'hFont', 'multilevel','tStyle');
-$section->addText(htmlspecialchars($read[2]),'nFont','nStyle');
+
+
+for($x=2 ; $x < sizeof($name); $x++){
+$section->addListItem($name[$x], 0, 'hFont', 'multilevel','tStyle');
+//echo $name[$x]."<br>";
+$section->addText(htmlspecialchars($read[$x]),'nFont','nStyle');
+//echo $read[$x]."<br>";
 $section->addTextBreak(2);
-$section->addText(htmlspecialchars("Acknowledgment"),'hFont','tStyle');
-$section->addText(htmlspecialchars($read[3]),'nFont','nStyle');
-$section->addTextBreak(2);
-$section->addText(htmlspecialchars("References"),'hFont','tStyle');
-$section->addText(htmlspecialchars($read[4]),'nFont','nStyle');
-
-
-
-
-
+}
 
 
 
@@ -77,11 +90,13 @@ $section->addText(htmlspecialchars($read[4]),'nFont','nStyle');
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 $objWriter->save('Report.docx');
 
+
+/*
 // Saving the document as HTML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
 $objWriter->save('Report.html');
 
-/*
+
 //Load temp file
 $phpWord = \PhpOffice\PhpWord\IOFactory::load('Report.docx'); 
 
@@ -97,3 +112,4 @@ header("Refresh: 1; url=http://localhost/download.html");
 
 /* Note: we skip RTF, because it's not XML-based and requires a different example. */
 /* Note: we skip PDF, because "HTML-to-PDF" approach is used to create PDF documents. */
+?>

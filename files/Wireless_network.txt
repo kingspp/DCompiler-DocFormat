@@ -1,0 +1,5 @@
+o understand the wire less technology let us consider a pair of Walkie-Talkies.These are small radios that can transmit and receive radio signals.When we talk into a Walkie-Talkie, our voice is picked up by a microphone, encoded onto a radio frequency and transmitted with the antenna. Another Walkie-Talkie can receive the transmission with its antenna, decode our voice from the radio signal and drive a speaker.Simple Walkie-Talkies like this transmit at a  signal strength of about 0.25 watts, and they can transmit about 500 to 1,000 feet.If we want to connect two computers together in a network using Walkie-Talkie technology:
+Equip each computer with a Walkie-Talkie.
+Give each computer a way to set whether it wants to transmit or receive.
+Give the computer a way to turn its binary 1s and 0s into two different beeps that the walkie-talkie could transmit and receive and convert back and forth between beeps and 1s/0s.
+- See more at: http://www.creativeworld9.com/2011/03/abstract-and-full-paper-on-wi-fi.html#sthash.vH81Y3ed.dpuf

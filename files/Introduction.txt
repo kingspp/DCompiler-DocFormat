@@ -1,1 +1,5 @@
-dsfsdf sdgfd 
+Wi-Fi, an acronym for "Wireless Fidelity", is a set of product compatibility standards for Wireless Local Area Networks (WLAN) based on the IEEE 802.11 specifications. Wi-Fi was intended to be used for mobile devices and LANs, but is now often used for Internet access. It enables a person with a wireless-enabled computer or personal digital assistant (PDA) to connect to the Internet when in proximity of an access point.
+                   Wireless Fidelity is the wireless way to handle networking. It is also known as 802.11 networking and wireless networking. Using this technology we can connect computers anywhere in a home or office without the need of any wires. The computers connect to the network using radio signals, and they can be up to 100 feet or so apart.
+                   Wi-Fi  allows  to connect to the internet from virtually anywhere at speeds of up to 54Mbps.The computers and handsets enabled with this technology use radio technologies based on the IEEE 802.11 standard to send and receive data anywhere within the range of a base station.
+                   Wi-Fi goes beyond wirelessly connecting computers,  it also connects people.
+- See more at: http://www.creativeworld9.com/2011/03/abstract-and-full-paper-on-wi-fi.html#sthash.vH81Y3ed.dpuf

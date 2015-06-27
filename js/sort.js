@@ -1,5 +1,6 @@
  $(function() {
     $( ".column" ).sortable({
+	  //items: 'div:not(#Abstract)',
 	  axis: 'y',
       connectWith: ".column",
       handle: ".portlet-header",
@@ -23,6 +24,13 @@
       icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
+	
+	//$( ".column" ).sortable({	items: 'div:not(#Abstract)'	});
+	var sorted = $(".column" ).sortable( "toArray" );			
+			$.post( "../php/sortupDB.php",{ 'choices[]': sorted}); 
+	
+	
+	
 }, 50);
 	
 	var insert = document.getElementById("insert");
@@ -35,8 +43,11 @@
 									'<div class="portlet-header" name="'+key+'">'+key+'</div>'+
 									'<div class="portlet-content">'+val+'</div>'+
 								'</div>');
+								
                         });
-                });		
+                });
+				
+				
 	
   });
   

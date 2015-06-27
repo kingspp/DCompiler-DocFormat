@@ -2,19 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI Sortable - Portlets</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <link href="../css/sort.css" rel="stylesheet">	
-  
-  <script>
- 
-  </script>
+  <title>jQuery UI Sortable - Portlets</title>   
+  <link href="../css/sort.css" rel="stylesheet">
+  <link href="../css/jq-ui.css" rel="stylesheet"> 
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body> 
-	<div class="column" id="insert"></div> 	
-	<script src="../js/sort.js"></script>  
+	<div class="container" style="padding-top:50px;">
+		<div class="row">
+			<div class="col-md-2">
+				<div class="column" id="insert"></div> 
+			</div>
+			
+			<div class="col-md-2">
+				<button type="button" onclick="window.location='/php/pword.php';" class="btn btn-default btn-lg pull-right">Finish</button>	
+			</div>
+		</div>
+	</div>
+	
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.js"></script>  
+	<script src="../js/jq-ui.js"></script> 
+	<script src="../js/sort.js"></script>  	
 </body>
 </html>
