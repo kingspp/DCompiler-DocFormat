@@ -177,9 +177,9 @@
 		<div class="download-section">
         <div class="container">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
+                <h2>Contact DocuMat</h2>
                 <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                <p><a href="mailto:dcompiler23@gmail.com">dcompiler23@gmail.com</a>
                 </p>
                 <ul class="list-inline banner-social-buttons">
                     <li>

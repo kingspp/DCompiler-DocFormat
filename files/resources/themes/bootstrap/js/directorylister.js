@@ -4,7 +4,7 @@ $(document).ready(function() {
     var contentTop = $('#page-content').offset().top;
 
     // Show/hide top link on page load
-    showHideTopLink(contentTop);
+    //showHideTopLink(contentTop);
 
     // Show/hide top link on scroll
     $(window).scroll(function() {
@@ -16,6 +16,16 @@ $(document).ready(function() {
         $('html, body').animate({ scrollTop: 0 }, 'fast');
         return false;
     });
+	
+	$('.del-btn').click(function(event) {
+		// Get the file name and path
+        var name = $(this).closest('li').attr('data-name');
+        var path = $(this).closest('li').attr('data-href');		
+		$.post( "delete.php",{ 'name': name}); 
+		setTimeout(function(){
+		window.location.reload();
+		},50);
+		});
 
     // Hash button on click action
     $('.file-info-button').click(function(event) {
@@ -54,9 +64,10 @@ $(document).ready(function() {
         event.preventDefault();
 
     });
+	
 
 });
-
+/*
 function showHideTopLink(elTop) {
     if($('#page-navbar').offset().top + $('#page-navbar').height() >= elTop) {
         $('#page-top-nav').show();
@@ -64,3 +75,5 @@ function showHideTopLink(elTop) {
         $('#page-top-nav').hide();
     }
 }
+
+*/

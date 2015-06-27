@@ -110,6 +110,10 @@
                             <a href="javascript:void(0)" class="file-info-button">
                                 <i class="fa fa-info-circle"></i>
                             </a>
+							
+							<a href="javascript:void(0)" class="del-btn"> 
+								<i class="fa fa-trash-o"></i>	
+							</a> 
 
                         <?php else: ?>
 

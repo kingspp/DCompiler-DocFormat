@@ -15,7 +15,8 @@ return array(
         'resources/*',
         'analytics.inc',
         'header.php',
-        'footer.php'
+        'footer.php',
+		'delete.php'
     ),
 
     // Files that, if present in a directory, make the directory a direct link
