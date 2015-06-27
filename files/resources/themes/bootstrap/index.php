@@ -8,10 +8,12 @@
         <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/folder.png">
 
         <!-- STYLES -->
-		<link href="../../../../css/main.css" rel="stylesheet">
+		
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style.css">
+		<link href="../../../../css/main.css" rel="stylesheet">
+		 <link href="../../../../css/grayscale.css" rel="stylesheet">
 
         <!-- SCRIPTS -->
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -31,34 +33,31 @@
 
     <body>
 
-       <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-		  <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../">DCompiler- DocuMat</a>
+       <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> DocuMat
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../">Home</a></li>		    
-			<li class="active dropdown">
-              <a href="/files" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Files <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/files">List</a></li>
-                <li><a href="../del.php">Delete Files</a></li>
-                
-              </ul>
-            </li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>           
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-	  </nav>
+        <!-- /.container -->
+    </nav>
 
         <div id="page-content" class="container">
 
@@ -134,14 +133,13 @@
         </div>
 		<div class="container">		
 			<div class ="row">
-				<div class="col-md-6">
-					<button type="button" onclick="window.location='../';" class="btn btn-primary ">Back</button>	
-					<button type="button" onclick="window.location='../php/sort.php';" class="btn btn-primary ">Next</button>	
+				<div class="col-md-6">					
+					<button type="button" onclick="window.location='../';" class="btn btn-default btn-sg ">Back</button>	
+					<button type="button" onclick="window.location='../php/sort.php';" class="btn btn-default btn-sg ">Next</button>	
 				</div>
 			</div>
 		</div>
-        <?php file_exists('footer.php') ? include('footer.php') : include($lister->getThemePath(true) . "/default_footer.php"); ?>
-		
+        
         <div id="file-info-modal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
