@@ -1,13 +1,13 @@
  $(function() {
     $( ".column" ).sortable({
+	  axis: 'y',
       connectWith: ".column",
       handle: ".portlet-header",
       cancel: ".portlet-toggle",
       placeholder: "portlet-placeholder ui-corner-all",
 	  update: function(event, ui) {
-		var sorted = $( ".column" ).sortable( "serialize", { key: "sort" } );
-			//Error
-			//$.post( "sort1.php",{ 'choices[]': sorted});  
+		var sorted = $(".column" ).sortable( "toArray" );			
+			$.post( "../php/sortupDB.php",{ 'choices[]': sorted});  
         }
     });
 	
@@ -36,11 +36,7 @@
 									'<div class="portlet-content">'+val+'</div>'+
 								'</div>');
                         });
-                });
- 
-
-	
-			
+                });		
 	
   });
   
