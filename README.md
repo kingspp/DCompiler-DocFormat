@@ -6,6 +6,7 @@ The Web-Application uses:
 2. PHPWord Framework
 3. Jquery
 4. Directory Lister
+5. SitePoint File-Drag upload
 
 
 
