@@ -3,7 +3,7 @@
   }
   .column {
     *width: 170px;
-    float: left;
+    *float: left;
     padding-bottom: 100px;
   }
   .portlet {
@@ -24,6 +24,7 @@
   .portlet-content {
     padding: 0.4em;
 	overflow: hidden;
+	
   }
   .portlet-placeholder {
     border: 1px dotted black;

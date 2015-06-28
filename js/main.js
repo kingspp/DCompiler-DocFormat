@@ -1,4 +1,4 @@
-var version = "BETA v2.2.2";
+var version = "STABLE  v2.2.3";
 var empty = 1;
 var id=1;
 

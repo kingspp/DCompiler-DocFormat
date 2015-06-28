@@ -10,7 +10,7 @@
 <body> 
 	<div class="container" style="padding-top:50px;">
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-4">
 				<div class="column" id="insert"></div> 
 			</div>
 			
@@ -20,9 +20,9 @@
 		</div>
 	</div>
 	
-	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.js"></script>  
 	<script src="../js/jq-ui.js"></script> 
+	<script src="../js/bootstrap.min.js"></script>	
 	<script src="../js/sort.js"></script>  	
 </body>
 </html>

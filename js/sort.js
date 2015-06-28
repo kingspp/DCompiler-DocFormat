@@ -13,25 +13,23 @@
     });
 	
 	setTimeout(function(){
-      $( ".portlet" )
-      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
-      .find( ".portlet-header" )
-        .addClass( "ui-widget-header ui-corner-all" )
-        .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
- 
-    $( ".portlet-toggle" ).click(function() {
+     $( ".portlet-toggle" ).click(function() {
       var icon = $( this );
-      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      icon.toggleClass( "ui-icon-plusthick ui-icon-minusthick" );
       icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
     });
 	
 	//$( ".column" ).sortable({	items: 'div:not(#Abstract)'	});
 	var sorted = $(".column" ).sortable( "toArray" );			
-			$.post( "../php/sortupDB.php",{ 'choices[]': sorted}); 
+			$.post( "../php/sortupDB.php",{ 'choices[]': sorted}); 		
+	
+  });
+ 
+   
 	
 	
 	
-}, 50);
+}, 1000);
 	
 	var insert = document.getElementById("insert");
                 /* call the php that has the php array which is json_encoded */
@@ -39,17 +37,15 @@
                         /* data will hold the php array as a javascript object */
                         $.each(data, function(key, val) {
                                 //$('ul').append('<li id="' + key + '">' + val+ '</li>');
-								$('#insert').append('<div class="portlet" id="'+key+'">'+
-									'<div class="portlet-header" name="'+key+'">'+key+'</div>'+
-									'<div class="portlet-content">'+val+'</div>'+
+								$('#insert').append('<div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="'+key+'">'+
+									'<div class="portlet-header ui-widget-header ui-corner-all" name="'+key+'"><span class="ui-icon ui-icon-plusthick portlet-toggle"></span>'+key+'</div>'+
+									'<div class="portlet-content" style="display: none;">'+val+'</div>'+
 								'</div>');
 								
                         });
                 });
 				
-				
-	
-  });
+	 
   
 
 		
