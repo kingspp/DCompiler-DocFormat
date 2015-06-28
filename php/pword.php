@@ -29,6 +29,7 @@ if ($handle) {
     while (($line = fgets($handle)) !== false) {
         // process the line read.
 		$name[$id++] = $line;
+		//echo $name[$id-1];
     }
 
     fclose($handle);

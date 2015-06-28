@@ -24,7 +24,11 @@
 			$.post( "../php/sortupDB.php",{ 'choices[]': sorted}); 		
 	
   });
- 
+	$("#finish").click(function(){
+		var sorted = $(".column" ).sortable( "toArray" );			
+			$.post( "../php/sortupDB.php",{ 'choices[]': sorted}); 
+		window.location='/php/pword.php';
+		});
    
 	
 	

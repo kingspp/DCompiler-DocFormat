@@ -1,4 +1,10 @@
 Title
 Abstract
 Introduction
+Advantages
+Conclusion
+Disadvantages
+Future
 History
+Hotspot
+Wifi-Security

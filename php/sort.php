@@ -15,7 +15,7 @@
 			</div>
 			
 			<div class="col-md-2">
-				<button type="button" onclick="window.location='/php/pword.php';" class="btn btn-default btn-lg pull-right">Finish</button>	
+				<button type="button" id="finish" class="btn btn-default btn-lg pull-right">Finish</button>	
 			</div>
 		</div>
 	</div>

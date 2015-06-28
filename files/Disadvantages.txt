@@ -1,0 +1,4 @@
+ 1.The 802.11b and 802.11g flavors of Wi-Fi use the 2.4 GHz spectrum, which is crowded with other devices such as Bluetooth, microwave ovens, cordless phones, or video sender devices, among many others. 
+2.Power consumption is fairly high compared to other standards, making battery life and heat a concern.
+3.It is not always configured properly by users. 
+- See more at: http://www.creativeworld9.com/2011/03/abstract-and-full-paper-on-wi-fi.html#sthash.fjHVWaSH.dpuf

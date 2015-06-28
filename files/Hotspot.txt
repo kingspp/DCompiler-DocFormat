@@ -1,0 +1,3 @@
+   It is a small box that is hardwired into the Internet. The box contains an 802.11 radio that can simultaneously talk to up to 100 or so 802.11 cards. There are many Wi-Fi hotspots now available in public places like restaurants, hotels, libraries and airports. We can   create our own hotspot in our home.
+
+- See more at: http://www.creativeworld9.com/2011/03/abstract-and-full-paper-on-wi-fi.html#sthash.fjHVWaSH.dpuf

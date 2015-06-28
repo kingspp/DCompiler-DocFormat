@@ -1,0 +1,13 @@
+·        Data Security /Encryption
+§  Third Party solution-Fortress
+§  Wi-FI protected Access(WPA)
+§  Wired Equivalent privacy (WEP)-shared key.
+·        Access
+§  WPA/WEP
+§  Close  system-No advertising
+§  Mac Authentication –Mac address control
+·        Attack-Denial of service
+·        Client protection
+·        Antivirus/Firewall
+                   Wi-Fi hotspots can be open or secure. If a hotspot is open, then anyone with a Wi-Fi card can access the hotspot. If it is secure, then the user needs to know a WEP key to connect.
+- See more at: http://www.creativeworld9.com/2011/03/abstract-and-full-paper-on-wi-fi.html#sthash.fjHVWaSH.dpuf

@@ -1,6 +1,6 @@
-IEEE (Institute of Electrical and Electronics Engineers) established the 802.11 group in 1990.
+·        IEEE (Institute of Electrical and Electronics Engineers) established the 802.11 group in 1990.
 ·        Initial speeds were 1 and 2 Mbps.
 ·        IEEE modified the standard in 1999 to include 802.11a and b.
 ·        802.11g was added in 2003.
 ·        802.11 equipment first available, then a, followed by g.
-- See more at: http://www.creativeworld9.com/2011/03/abstract-and-full-paper-on-wi-fi.html#sthash.vH81Y3ed.dpuf
+- See more at: http://www.creativeworld9.com/2011/03/abstract-and-full-paper-on-wi-fi.html#sthash.fjHVWaSH.dpuf
