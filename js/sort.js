@@ -33,7 +33,7 @@
 	
 	
 	
-}, 1000);
+}, 2000);
 	
 	var insert = document.getElementById("insert");
                 /* call the php that has the php array which is json_encoded */
