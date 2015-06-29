@@ -1,10 +1,8 @@
-  body {
-    min-width: 520px;
-  }
   .column {
     *width: 170px;
     *float: left;
     padding-bottom: 100px;
+	padding-top:60px;
   }
   .portlet {
     margin: 0 1em 1em 0;
