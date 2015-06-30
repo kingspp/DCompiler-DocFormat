@@ -1,6 +1,7 @@
-var version = "STABLE  v2.2.6";
+var version = "STABLE  v2.2.7";
 var empty = 1;
 var id=1;
+var fileID=1;
 
 var defT=0;
 var defI=0;
@@ -32,7 +33,7 @@ function deleteall(){
             url:"php/db/deleteall.php",
             data:{action:"deleteall"},
             success:function(data){
-               showFiles();
+               $('#myDiv').empty();
             }
         });
 	}
@@ -54,6 +55,10 @@ $("#form-content").submit(function(event) {
       posting.done(function( data ) {
         //alert('File save successfull');
 		showFiles();
+		document.getElementsByName("head")[0].value="";
+		document.getElementsByName('head')[0].placeholder='Heading';
+		document.getElementsByName("data")[0].value="";
+		document.getElementsByName('data')[0].placeholder='Content';
       });
     });
 
@@ -122,13 +127,35 @@ function create() {
     table.innerHTML = html;
 }
 
+
+function ajaxPHP(type, url){
+	var ret;
+	$.ajax({
+		type:type,
+		url:url,
+		data:{action: "ajaxPHP"},
+		success:function(data){
+			alert(data);
+			ret=data;
+			}
+		});
+	return ret;
+}
+
 function showFiles(){
+	var myDiv = document.getElementById("myDiv");
         $.ajax({
             type:"POST",
-            url:"php/db/display.php",
+            url:"php/db/display.php",			
             data:{action:"showFiles"},
+			dataType:"json",
             success:function(data){
-                $("#myDiv").html(data);
+				for(var i=0 ; i<data.length ; i++){				
+					var ni = document.getElementById('myDiv');
+					var newdiv = document.createElement('div');
+					newdiv.innerHTML = '<a href="/php/db/displayData.php?head='+data[i].replace('<br/>', '')+'" id='+data[i]+'>'+data[i]+'</a>';
+					ni.appendChild(newdiv); 
+				}				
             }
         });
     }
@@ -139,7 +166,6 @@ function loadFun() {
 		//$('#myDiv').load('php/readDir.php');
 		//Not yet working
 		//$("#tableCreate").submit(function(e){e.preventDefault();create();});
-		showFiles();
-		
+		showFiles();		
 }		
 window.onload = loadFun;

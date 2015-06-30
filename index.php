@@ -167,7 +167,7 @@
 					<br style="clear:both">
 					<h3 style="margin-bottom: 25px; text-align: center; font-weight: bold">Files on Server</h3>
 					<input type="hidden" value="0" id="theValue" />		
-					<div id="myDiv"> </div>
+					<div id="myDiv" style="color:#42dca3"> </div>
 					<div style="padding-top:10px;">
 						<button type="button" onclick="window.location='/files';" class="btn btn-default btn-lg pull-right">Finish</button>	
 					</div>
