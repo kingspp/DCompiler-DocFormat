@@ -1,4 +1,4 @@
-var version = "STABLE  v2.2.7";
+var version = "BETA v2.2.8";
 var empty = 1;
 var id=1;
 var fileID=1;
@@ -27,30 +27,16 @@ $("#imageBtn").click(function(){
 	}
 });
 
-function deleteall(){
-	 $.ajax({
-            type:"POST",
-            url:"php/db/deleteall.php",
-            data:{action:"deleteall"},
-            success:function(data){
-               $('#myDiv').empty();
-            }
-        });
-	}
+
 
 $("#form-content").submit(function(event) {
-
       /* stop form from submitting normally */
       event.preventDefault();
-
       /* get some values from elements on the page: */
       var $form = $( this ),
           url = $form.attr( 'action' );
-
       /* Send the data using post */
       var posting = $.post( url, { head: $('#head').val(), data: $('#data').val() } );
-	  
-
       /* Alerts the results */
       posting.done(function( data ) {
         //alert('File save successfull');
@@ -63,8 +49,7 @@ $("#form-content").submit(function(event) {
     });
 
 function save(){
-	if(empty == 1){$('#myDiv').empty(); empty=0;}
-	
+	if(empty == 1){$('#myDiv').empty(); empty=0;}	
 	var response=document.getElementById("response");	
 	var data = 'data='+document.getElementById("data").value;
 	var head = 'head='+document.getElementById("head").value;	
@@ -127,38 +112,6 @@ function create() {
     table.innerHTML = html;
 }
 
-
-function ajaxPHP(type, url){
-	var ret;
-	$.ajax({
-		type:type,
-		url:url,
-		data:{action: "ajaxPHP"},
-		success:function(data){
-			alert(data);
-			ret=data;
-			}
-		});
-	return ret;
-}
-
-function showFiles(){
-	var myDiv = document.getElementById("myDiv");
-        $.ajax({
-            type:"POST",
-            url:"php/db/display.php",			
-            data:{action:"showFiles"},
-			dataType:"json",
-            success:function(data){
-				for(var i=0 ; i<data.length ; i++){				
-					var ni = document.getElementById('myDiv');
-					var newdiv = document.createElement('div');
-					newdiv.innerHTML = '<a href="/php/db/displayData.php?head='+data[i].replace('<br/>', '')+'" id='+data[i]+'>'+data[i]+'</a>';
-					ni.appendChild(newdiv); 
-				}				
-            }
-        });
-    }
 
 function loadFun() {		
         var footer=document.getElementById("footer");

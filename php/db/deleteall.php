@@ -13,10 +13,8 @@ $sql='TRUNCATE TABLE documents';
 $result = $conn->query($sql);
 
 if ($result === TRUE) {
-	echo "success";
-	
-	}
-	
+	echo "success";	
+	}	
 else{
 	echo "failed";
 	}

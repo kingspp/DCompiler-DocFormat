@@ -1,5 +1,6 @@
 <?php
 require_once '../phpword/src/PhpWord/Autoloader.php';
+include 'db/dbinfo.php';
 \PhpOffice\PhpWord\Autoloader::register();
 \PhpOffice\PhpWord\Settings::setPdfRendererPath('tcpdf');
 \PhpOffice\PhpWord\Settings::setPdfRendererName('TCPDF');
@@ -20,6 +21,32 @@ $phpWord->addNumberingStyle(
         )
      )
 );
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT Heading, Content FROM temp";
+$result = $conn->query($sql);
+$id=0;
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $head[$id]=$row["Heading"];
+		$content[$id]=$row['Content'];
+		//echo $content[$id];
+		$id++;
+    }	
+} else {
+    //echo "";
+}
+$name=$head;
+$read=$content;
+
+/*
 
 $dir="../files/";
 $format=".txt";
@@ -55,7 +82,7 @@ for ($x = 0; $x < sizeof($name); $x++) {
 	$read[$x]= fread($myfile,filesize($dir.$name[$x].$format));
 }
 
-
+*/
 
 // Normal
 $section = $phpWord->addSection();

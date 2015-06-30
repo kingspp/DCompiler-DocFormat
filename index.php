@@ -110,8 +110,10 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>File Management</h2>
                      <a href="/files" class="btn btn-default btn-lg">List Files</a> &nbsp&nbsp
-					 <a  onClick="deleteall();" class="btn btn-default btn-lg">Delete Files</a>
+					 <a onClick="deleteall();" class="btn btn-default btn-lg">Delete Files</a><br><br>
+					 <a id="FMStatus" style="font-size:20px;"></a>
                 </div>
+				
             </div>
         </div>
     </section>
@@ -169,7 +171,7 @@
 					<input type="hidden" value="0" id="theValue" />		
 					<div id="myDiv" style="color:#42dca3"> </div>
 					<div style="padding-top:10px;">
-						<button type="button" onclick="window.location='/files';" class="btn btn-default btn-lg pull-right">Finish</button>	
+						<button type="button" onclick="window.location='/php/sort.php';" class="btn btn-default btn-lg pull-right">Finish</button>	
 					</div>
 				</div>
 			</div>		
@@ -224,6 +226,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
 	<script src="js/filedrag.js"></script>
+	<script src="js/db.js"></script> 
 	<script src="js/main.js"></script> 
 
 </body>

@@ -6,6 +6,16 @@ $format=".txt";
 $files = array_filter(glob('../files/*.txt'), 'is_file');
 $files = array_map('basename', $files);
 $files = preg_replace('/\\.[^.\\s]{3,4}$/', '', $files);
+
+
+
+$files=array_diff($files, ["Title", "Abstract", "Introduction"]);
+array_unshift($files, "Title","Abstract","Introduction");
+
+
+
+
+
 for ($x = 0; $x < sizeof($files); $x++) {    
 	$myfile = fopen($dir.$files[$x].$format, "r");
 	$read[$x]= fread($myfile,filesize($dir.$files[$x].$format));	

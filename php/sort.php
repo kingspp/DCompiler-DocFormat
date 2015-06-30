@@ -58,6 +58,7 @@
 	<script src="../js/bootstrap.min.js"></script>	
 	<script src="../js/sort.js"></script> 
  	<script src="../js/grayscale.js"></script>	
+	<script src="../js/db.js"></script>
 	<script src="../js/main.js"></script> 
 </body>
 </html>

@@ -23,21 +23,24 @@
 	var sorted = $(".column" ).sortable( "toArray" );			
 			$.post( "../php/sortupDB.php",{ 'choices[]': sorted}); 		
 	
-  });
+	},2000);
 	$("#finish").click(function(){
+	
 		var sorted = $(".column" ).sortable( "toArray" );			
-			$.post( "../php/sortupDB.php",{ 'choices[]': sorted}); 
+			$.post( "../php/db/insertSort.php",{ 'choices[]': sorted}); 
+			//alert('ok');
 		window.location='/php/pword.php';
+		
 		});
    
 	
 	
 	
-}, 2000);
+ });
 	
 	var insert = document.getElementById("insert");
                 /* call the php that has the php array which is json_encoded */
-                $.getJSON('getName.php', function(data) {
+                $.getJSON('db/getName.php', function(data) {
                         /* data will hold the php array as a javascript object */
                         $.each(data, function(key, val) {
                                 //$('ul').append('<li id="' + key + '">' + val+ '</li>');
