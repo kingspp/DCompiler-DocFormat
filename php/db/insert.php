@@ -1,9 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "documat";
-$table = "documents";
+include 'dbinfo.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,13 +9,12 @@ if ($conn->connect_error) {
 } 
 
 //Create table for the first time
-
+/*
 // sql to create table
-$sql = "CREATE TABLE Documents (
+$sql = "CREATE TABLE documents (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 Heading VARCHAR(30) NOT NULL,
 Content TEXT  NOT NULL,
-Size VARCHAR(30) NOT NULL,
 reg_date TIMESTAMP
 )";
 
@@ -28,6 +23,23 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
+*/
+
+
+
+$head = $_POST['head'];
+$data = $_POST['data'];
+
+$sql = "INSERT INTO documents (Heading, Content) VALUES('$head', '$data');";
+if ($conn->query($sql) === TRUE) {	
+	$last_id = mysqli_insert_id($conn);
+    echo $last_id;
+} 
+else {
+	echo "FAIL"; 
+    //echo "Error: " . $sql . "<br>" . $conn->error;	 	
+}
+
 
 $conn->close();
 ?>

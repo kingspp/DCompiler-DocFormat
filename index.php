@@ -110,7 +110,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>File Management</h2>
                      <a href="/files" class="btn btn-default btn-lg">List Files</a> &nbsp&nbsp
-					 <a href="php/del.php" class="btn btn-default btn-lg">Delete Files</a>
+					 <a  onClick="deleteall();" class="btn btn-default btn-lg">Delete Files</a>
                 </div>
             </div>
         </div>
@@ -124,13 +124,17 @@
 					<div class="form-area">					
 						<br style="clear:both">
 						<h3 style="margin-bottom: 25px; text-align: center; font-weight: bold">Block ID</h3>
-						<div class="form-group">
-							<input type="text" class="form-control" id="head" name="head" placeholder="Heading" required>
-						</div>						
-						<div class="form-group">
-							<textarea class="form-control" type="textarea" name="data" id="data" placeholder="Content" rows="15" required></textarea>  
-						</div>           
-						<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>
+						<form id="form-content" action="php/db/insert.php" method="POST" accept-charset="UTF-8"
+						enctype="application/x-www-form-urlencoded"  validate>
+							<div class="form-group">
+								<input type="text" class="form-control" id="head" name="head" placeholder="Heading" required>
+							</div>						
+							<div class="form-group">
+								<textarea class="form-control" type="textarea" name="data" id="data" placeholder="Content" rows="15" required></textarea>  
+							</div>  
+							<input type="submit" class="btn btn-default btn-lg pull-right" value="Save">
+							<!--<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>-->
+						</form>
 						<div id="table" style="padding-top:70px;">
 							<button id="tableBtn" class="btn btn-default btn-sg">Tabular Input</button>
 							<div id="rcinput" style="display:none; padding-top:30px;">

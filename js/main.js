@@ -1,4 +1,4 @@
-var version = "STABLE  v2.2.5";
+var version = "STABLE  v2.2.6";
 var empty = 1;
 var id=1;
 
@@ -25,6 +25,37 @@ $("#imageBtn").click(function(){
 		defI=0;
 	}
 });
+
+function deleteall(){
+	 $.ajax({
+            type:"POST",
+            url:"php/db/deleteall.php",
+            data:{action:"deleteall"},
+            success:function(data){
+               showFiles();
+            }
+        });
+	}
+
+$("#form-content").submit(function(event) {
+
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      /* get some values from elements on the page: */
+      var $form = $( this ),
+          url = $form.attr( 'action' );
+
+      /* Send the data using post */
+      var posting = $.post( url, { head: $('#head').val(), data: $('#data').val() } );
+	  
+
+      /* Alerts the results */
+      posting.done(function( data ) {
+        //alert('File save successfull');
+		showFiles();
+      });
+    });
 
 function save(){
 	if(empty == 1){$('#myDiv').empty(); empty=0;}
@@ -91,11 +122,24 @@ function create() {
     table.innerHTML = html;
 }
 
+function showFiles(){
+        $.ajax({
+            type:"POST",
+            url:"php/db/display.php",
+            data:{action:"showFiles"},
+            success:function(data){
+                $("#myDiv").html(data);
+            }
+        });
+    }
+
 function loadFun() {		
         var footer=document.getElementById("footer");
 		footer.innerHTML='<p class="text-center text-muted" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;"><b>'+version+'</b></p>';
-		$('#myDiv').load('php/readDir.php');
+		//$('#myDiv').load('php/readDir.php');
 		//Not yet working
-		//$("#tableCreate").submit(function(e){e.preventDefault();create();});		
-        }		
+		//$("#tableCreate").submit(function(e){e.preventDefault();create();});
+		showFiles();
+		
+}		
 window.onload = loadFun;
