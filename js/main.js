@@ -1,4 +1,4 @@
-var version = "BETA v2.3.2";
+var version = "BETA v2.3.3";
 var empty = 1;
 var id=1;
 var fileID=1;
@@ -6,17 +6,19 @@ var fileID=1;
 var defT=0;
 var defI=0;
 $("#tableBtn").click(function(){
+	$("#icn_plusT").toggleClass("fa-plus-circle, fa-minus-circle ");
 	if(defT==0){
-        $("#rcinput").show();
+        $("#rcinput").show();		
 		defT=1;
 	}
 	else{
-		$("#rcinput").hide();
+		$("#rcinput").hide();		
 		defT=0;
 	}
 });
 
 $("#imageBtn").click(function(){
+	$("#icn_plusI").toggleClass("fa-plus-circle, fa-minus-circle ");
 	if(defI==0){
         $("#imginput").show();
 		defI=1;

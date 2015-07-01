@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI Sortable - Portlets</title>   
+  <title>DocuMat</title>   
   <link href="../css/sort.css" rel="stylesheet">
   <link href="../css/jq-ui.css" rel="stylesheet"> 
   <link href="../css/bootstrap.min.css" rel="stylesheet">

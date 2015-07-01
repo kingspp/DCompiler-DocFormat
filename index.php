@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="kingspp">
 
     <title>DocuMat</title>
 
@@ -146,15 +146,16 @@
 							<!--<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>-->
 						</form>
 						<div id="table" style="padding-top:70px;">
-							<button id="tableBtn" class="btn btn-default btn-sg">Tabular Input</button>
+							
+							<a style="font-size:20px;"><b>Tabular Input</b><a id="tableBtn" ><i id="icn_plusT" class="fa fa-plus-circle" style="font-size:25px; padding-left:22px;"></i></a></a>
 							<div id="rcinput" style="display:none; padding-top:30px;">
 								<input type="number" style="width:40%;" class="form-control" id="rows" name="rows" placeholder="Rows" >
 								<input type="number" class="form-control" id="columns" name="columns" placeholder="Column" style="width:40%;">	
 								<button id="create" onclick="create();" class="btn btn-default btn-lg pull-right">Create</button>
 							</div>
 						</div>
-						<div id="image" style="padding-top:25px;">
-							<button id="imageBtn" class="btn btn-default btn-sg">Image Upload</button>
+						<div id="image" style="padding-top:25px;">							
+							<a style="font-size:20px;"><b>Image Upload</b><a id="imageBtn" ><i id="icn_plusI" class="fa fa-plus-circle" style="font-size:25px; padding-left:20px;"></i></a></a>
 							<div id="imginput" style="display:none; padding-top:30px;">
 								<form id="upload" action="php/upload.php" method="POST" enctype="multipart/form-data">
 									<fieldset>										
