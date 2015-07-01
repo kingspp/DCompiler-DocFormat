@@ -14,6 +14,7 @@ $phpWord->addParagraphStyle('nStyle', array('align' => 'justify'));
 $phpWord->addFontStyle('tFont', array('name' => 'Times New Roman', 'bold' => true, 'italic' => true, 'size' => 24, 'allCaps' => true));
 $phpWord->addFontStyle('hFont', array('name' => 'Times New Roman', 'bold' => false, 'italic' => false, 'size' => 10, 'allCaps' => true));
 $phpWord->addFontStyle('aFont', array('name' => 'Times New Roman', 'bold' => true, 'italic' => false, 'size' => 9));
+$phpWord->addFontStyle('aFonti', array('name' => 'Times New Roman', 'bold' => true, 'italic' => true, 'size' => 9));
 $phpWord->addFontStyle('nFont', array('name' => 'Times New Roman', 'bold' => false, 'italic' => false, 'size' => 10));
 $phpWord->addNumberingStyle(
     'multilevel',
@@ -42,12 +43,10 @@ if ($conn->connect_error) {
 $sql = "SELECT Heading, Content FROM temp";
 $result = $conn->query($sql);
 $id=0;
-if ($result->num_rows > 0) {
-    // output data of each row
+if ($result->num_rows > 0) {   
     while($row = $result->fetch_assoc()) {
         $head[$id]=$row["Heading"];
-		$content[$id]=$row['Content'];
-		//echo $content[$id];
+		$content[$id]=$row['Content'];		
 		$id++;
     }	
 } else {
@@ -56,43 +55,7 @@ if ($result->num_rows > 0) {
 $name=$head;
 $read=$content;
 
-/*
 
-$dir="../files/";
-$format=".txt";
-$id=0;
-$handle = fopen("../php/sort.txt", "r");
-if ($handle) {
-    while (($line = fgets($handle)) !== false) {
-        // process the line read.
-		$name[$id++] = $line;
-		//echo $name[$id-1];
-    }
-
-    fclose($handle);
-} else {
-    // error opening the file.
-} 
-
-
-
-for($i=0; $i<sizeof($name);$i++){
-	$name[$i]=preg_replace('/\s+/', '', $name[$i]);
-	//echo $name[$i];
-	}
-
-
-
-//$file=$dir.$filename.$format;
-//$fh = fopen($file,'r') or die($php_errormsg);
-//$read = fread($fh,filesize($file));
-for ($x = 0; $x < sizeof($name); $x++) {
-    //echo $dir.$files[$x].$format;
-	$myfile = fopen($dir.$name[$x].$format, "r");
-	$read[$x]= fread($myfile,filesize($dir.$name[$x].$format));
-}
-
-*/
 
 // Normal
 $section = $phpWord->addSection();
@@ -108,8 +71,9 @@ $section = $phpWord->addSection(
     )
 );
 
-
-$section->addText(htmlspecialchars("Abstract-{$read[1]}"),'aFont');
+$textrun = $section->createTextRun();
+$textrun->addText("Abstract-",'aFonti');
+$textrun->addText($read[1],'aFont');
 $section->addTextBreak($lineSpace);
 
 
@@ -171,7 +135,7 @@ for ($x = 0; $x < 3; $x++){
 	echo $read[$x].'<br><br>';
 }
 */
-header("Refresh: 1; url=http://localhost/download.html");
+//header("Refresh: 1; url=http://localhost/download.html");
 
 /* Note: we skip RTF, because it's not XML-based and requires a different example. */
 /* Note: we skip PDF, because "HTML-to-PDF" approach is used to create PDF documents. */

@@ -1,0 +1,4 @@
+Issues
+
+1. Delete All - deletes all the tables and images
+2. Two table error in sorting
