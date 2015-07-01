@@ -43,6 +43,21 @@ else {
 }
 }
 
+$sql = "select id, Heading , Content, count(*) from temp group by Content having count(*)>1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        //echo "id: " . $row["id"]. " - Name: " . $row["Heading"]. " " . $row["Content"]. "<br>";
+		//$conn->query("delete from temp where Content='{$row['Content']}' and Heading =' {$row['Heading']}'");
+		$sql = "delete from temp where Content='{$row['Content']}' and id <> {$row['id']}";
+		$res = $conn->query($sql);
+    }
+} else {
+    echo "0 results";
+}
+
 sleep(5);
 
 ?>
