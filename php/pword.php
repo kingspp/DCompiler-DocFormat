@@ -130,6 +130,11 @@ for($x=2 ; $x < sizeof($name); $x++){
 	}
 	$section->addTextBreak(2);	
 	}
+	else if($name[$x] == "Image"){
+	$section->addImage($read[$x], array(null, null, 'align'=>'center'));
+	$section->addTextBreak(2);
+	
+	}
 	else{
 	$section->addListItem($name[$x], 0, 'hFont', 'multilevel','tStyle');
 	//echo $name[$x]."<br>";

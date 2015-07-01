@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
 		//echo $head[$id] . ":" . $data[$id] . "<br/>";
 		$id++;
     }
-	$res1 = array_combine($head, $data);	
+		
 	$res = array_map(function($key, $val) {return array($key=>$val);}, $head, $data);
 	echo json_encode($res);
 	//echo $res;

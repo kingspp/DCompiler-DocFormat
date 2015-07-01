@@ -114,6 +114,9 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 			xhr.open("POST", $id("upload").action, true);
 			xhr.setRequestHeader("X_FILENAME", file.name);
 			xhr.send(file);
+			
+			
+			
 
 		}
 
