@@ -57,7 +57,8 @@ $read=$content;
 
 
 
-// Normal
+
+//Title
 $section = $phpWord->addSection();
 $section->addText(htmlspecialchars($read[0]),'tFont', 'tStyle');
 $section->addTextBreak($lineSpace);
@@ -70,14 +71,33 @@ $section = $phpWord->addSection(
         'breakType' => 'continuous',
     )
 );
+$section->addText(htmlspecialchars("Author 1"));
+$section->addText(htmlspecialchars("Author 2"));
 
+
+
+// Two columns
+$section = $phpWord->addSection(
+    array(
+        'colsNum'   => 2,		
+        'breakType' => 'continuous',
+    )
+);
+
+//Abstract
 $textrun = $section->createTextRun();
 $textrun->addText("Abstract-",'aFonti');
 $textrun->addText($read[1],'aFont');
 $section->addTextBreak($lineSpace);
 
+//Keywords
+$textrun = $section->createTextRun();
+$textrun->addText("Keywords-",'aFonti');
+$textrun->addText($read[2],'aFont');
+$section->addTextBreak($lineSpace);
 
-for($x=2 ; $x < sizeof($name); $x++){	
+
+for($x=3 ; $x < sizeof($name); $x++){	
 	if($name[$x] == "Table"){	
 	$arr = explode(',', $read[$x]);
 	$rows = $arr[0] ;
@@ -135,7 +155,7 @@ for ($x = 0; $x < 3; $x++){
 	echo $read[$x].'<br><br>';
 }
 */
-//header("Refresh: 1; url=http://localhost/download.html");
+header("Refresh: 1; url=http://localhost/download.html");
 
 /* Note: we skip RTF, because it's not XML-based and requires a different example. */
 /* Note: we skip PDF, because "HTML-to-PDF" approach is used to create PDF documents. */
