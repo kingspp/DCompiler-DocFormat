@@ -1,4 +1,4 @@
-var version = "BETA v2.2.9";
+var version = "BETA v2.3.0";
 var empty = 1;
 var id=1;
 var fileID=1;
@@ -95,7 +95,7 @@ function create() {
     if (rows <= 0 || cols <= 0)
         return false;
 
-    var html = '<form id="contact_form" action="php/table.php" method="POST" enctype="multipart/form-data">'+
+    var html = '<form id="contact_form" action="php/db/insertTable.php" method="POST" enctype="multipart/form-data">'+
 	'<input type="text" class="form-control" value='+rows+' name="row"  style="background-color:#000; display:none;"><br>'
 	+'<input type="text" class="form-control" value='+cols+' name="col" style="background-color:#000; display:none;"><br>'
 	+'<table>';

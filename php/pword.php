@@ -22,6 +22,14 @@ $phpWord->addNumberingStyle(
      )
 );
 
+
+$styleTable = array('borderSize' => 6, 'borderColor' => '000000', 'cellMargin' => 80);
+	$styleFirstRow = array('borderBottomSize' => 18, 'borderBottomColor' => '0000FF', 'bgColor' => 'FFFFFF');
+	$styleCell = array('valign' => 'center');
+	$styleCellBTLR = array('valign' => 'center', 'textDirection' => \PhpOffice\PhpWord\Style\Cell::TEXT_DIR_BTLR);
+	$fontStyle = array('bold' => true, 'align' => 'center');
+$phpWord->addTableStyle('Fancy Table', $styleTable, $styleFirstRow);	
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -103,12 +111,32 @@ $section->addText(htmlspecialchars("Abstract-{$read[1]}"),'aFont');
 $section->addTextBreak(2);
 
 
-for($x=2 ; $x < sizeof($name); $x++){
-$section->addListItem($name[$x], 0, 'hFont', 'multilevel','tStyle');
-//echo $name[$x]."<br>";
-$section->addText(htmlspecialchars($read[$x]),'nFont','nStyle');
-//echo $read[$x]."<br>";
-$section->addTextBreak(2);
+for($x=2 ; $x < sizeof($name); $x++){	
+	if($name[$x] == "Table"){	
+	$arr = explode(',', $read[$x]);
+	$rows = $arr[0] ;
+	$cols = $arr[1] ;	
+	$id=2;	
+	$section->addText(htmlspecialchars('Table'));
+	$table = $section->addTable('Fancy Table');	
+	for($r = 0; $r < $rows; $r++) { 		
+		$table->addRow();		
+		for($c = 0; $c < $cols; $c++) {		
+			if ($r==0)
+				$table->addCell(1750)->addText(htmlspecialchars($arr[$id++]), $fontStyle);
+			else
+				$table->addCell(1750)->addText(htmlspecialchars($arr[$id++]), null);
+		}
+	}
+	$section->addTextBreak(2);	
+	}
+	else{
+	$section->addListItem($name[$x], 0, 'hFont', 'multilevel','tStyle');
+	//echo $name[$x]."<br>";
+	$section->addText(htmlspecialchars($read[$x]),'nFont','nStyle');
+	//echo $read[$x]."<br>";
+	$section->addTextBreak(2);
+	}
 }
 
 

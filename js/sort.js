@@ -45,7 +45,8 @@
                 /* call the php that has the php array which is json_encoded */
                 $.getJSON('db/getName.php', function(data) {
                         /* data will hold the php array as a javascript object */
-                        $.each(data, function(key, val) {
+						for(x=0; x<data.length; x++){
+                        $.each(data[x], function(key, val) {
                                 //$('ul').append('<li id="' + key + '">' + val+ '</li>');
 								$('#insert').append('<div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="'+key+'">'+
 									'<div class="portlet-header ui-widget-header ui-corner-all" name="'+key+'"><span class="ui-icon ui-icon-plusthick portlet-toggle"></span>'+key+'</div>'+
@@ -53,6 +54,7 @@
 								'</div>');
 								
                         });
+						}
                 });
 				
 	 
