@@ -104,17 +104,25 @@
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="content-section text-center">
+    <section id="download" class="content-section">
         <div class="download-section">
             <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2>File Management</h2>
-                     <a href="/files" class="btn btn-default btn-lg">List Files</a> &nbsp&nbsp
+                     <a onClick="listf();" class="btn btn-default btn-lg">List Files</a> &nbsp&nbsp
 					 <a onClick="deleteall();" class="btn btn-default btn-lg">Delete Files</a><br><br>
 					 <a id="FMStatus" style="font-size:20px;"></a>
-                </div>
-				
+                </div>				
             </div>
+			<div class="container">
+				<div id="fileList" class="col-lg-4 col-lg-offset-4">
+				
+				
+				</div>
+				
+				<div id="delFile">
+				</div>
+			</div>
         </div>
     </section>
 	

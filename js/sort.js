@@ -29,7 +29,10 @@
 		var sorted = $(".column" ).sortable( "toArray" );			
 			$.post( "../php/db/insertSort.php",{ 'choices[]': sorted}); 
 			//alert('ok');
-		window.location='/php/pword.php';
+			setTimeout(function(){
+				window.location='/php/pword.php';
+				},2000);
+		
 		
 		});
    

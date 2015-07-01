@@ -35,7 +35,7 @@ foreach ($data as $value) {
 	//$sql = "INSERT INTO temp * from documents where Heading = 'Abstract'";
 if ($conn->query($sql) === TRUE) {	
 	$last_id = mysqli_insert_id($conn);
-    echo $last_id;
+    //echo $last_id;
 } 
 else {
 	echo "FAIL"; 

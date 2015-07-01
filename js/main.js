@@ -1,4 +1,4 @@
-var version = "BETA v2.2.8";
+var version = "BETA v2.2.9";
 var empty = 1;
 var id=1;
 var fileID=1;
@@ -41,6 +41,7 @@ $("#form-content").submit(function(event) {
       posting.done(function( data ) {
         //alert('File save successfull');
 		showFiles();
+		listf()
 		document.getElementsByName("head")[0].value="";
 		document.getElementsByName('head')[0].placeholder='Heading';
 		document.getElementsByName("data")[0].value="";
