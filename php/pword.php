@@ -5,6 +5,8 @@ include 'db/dbinfo.php';
 \PhpOffice\PhpWord\Settings::setPdfRendererPath('tcpdf');
 \PhpOffice\PhpWord\Settings::setPdfRendererName('TCPDF');
 
+$lineSpace = 1;
+
 // Creating the new document...
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 $phpWord->addParagraphStyle('tStyle', array('align' => 'center', 'spaceAfter' => 100));
@@ -95,7 +97,7 @@ for ($x = 0; $x < sizeof($name); $x++) {
 // Normal
 $section = $phpWord->addSection();
 $section->addText(htmlspecialchars($read[0]),'tFont', 'tStyle');
-$section->addTextBreak(2);
+$section->addTextBreak($lineSpace);
 
 
 // Two columns
@@ -108,7 +110,7 @@ $section = $phpWord->addSection(
 
 
 $section->addText(htmlspecialchars("Abstract-{$read[1]}"),'aFont');
-$section->addTextBreak(2);
+$section->addTextBreak($lineSpace);
 
 
 for($x=2 ; $x < sizeof($name); $x++){	
@@ -128,11 +130,11 @@ for($x=2 ; $x < sizeof($name); $x++){
 				$table->addCell(1750)->addText(htmlspecialchars($arr[$id++]), null);
 		}
 	}
-	$section->addTextBreak(2);	
+	$section->addTextBreak($lineSpace);	
 	}
 	else if($name[$x] == "Image"){
 	$section->addImage($read[$x], array(null, null, 'align'=>'center'));
-	$section->addTextBreak(2);
+	$section->addTextBreak($lineSpace);
 	
 	}
 	else{
@@ -140,7 +142,7 @@ for($x=2 ; $x < sizeof($name); $x++){
 	//echo $name[$x]."<br>";
 	$section->addText(htmlspecialchars($read[$x]),'nFont','nStyle');
 	//echo $read[$x]."<br>";
-	$section->addTextBreak(2);
+	$section->addTextBreak($lineSpace);
 	}
 }
 
