@@ -36,7 +36,14 @@
 		
 		});
    
+	$("#ieeeF").click(function(){
+		//alert("Ieee");
+		$("#customForm").toggle();
+	});
 	
+	$("#customF").click(function(){
+		$("#customForm").toggle();
+	});
 	
 	
  });

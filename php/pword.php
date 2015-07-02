@@ -7,6 +7,8 @@ include 'db/dbinfo.php';
 
 $lineSpace = 1;
 
+
+
 // Creating the new document...
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 $phpWord->addParagraphStyle('tStyle', array('align' => 'center', 'spaceAfter' => 100));

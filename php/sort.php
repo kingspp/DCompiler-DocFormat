@@ -38,12 +38,59 @@
         <!-- /.container -->
     </nav>
 	<div class="container" style="padding-top:50px;">
-		<div class="row">
+		<div class="row">			
 			<div class="col-md-4">
+			<h4 style="padding-top:35px;">Step 1 : Arrange</h4>
 				<div class="column" id="insert"></div> 
 			</div>
 			
-			<div class="col-md-2" style="padding-top:60px;">
+			<div class= "col-md-4">
+				<div class="row">		
+					<h4 style="padding-top:35px;">Step 2 : Select</h4>
+					<div>
+					<div class="col-md-3">
+						<button type="button" id="ieeeF" class="btn btn-default btn-sg" onclick="" style="padding:20px;"> &nbsp IEEE &nbsp</button>	
+					</div>
+					<div class="col-md-3">
+						<button type="button" id="customF" class="btn btn-default btn-sg" onclick="" style="padding:20px;">Custom</button>	
+					</div>
+					</div>
+				</div>
+				<div id="customForm"  style="padding-top:25px">
+					<form id="form-content" action="php/db/insert.php" method="POST" accept-charset="UTF-8"
+						enctype="application/x-www-form-urlencoded"  validate>
+							<div class="form-group">
+								<div id="title" style="padding-top:10px; color:#42dca3;">
+									<a>Title:</a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+								<div id="abstract" style="padding-top:10px; color:#42dca3;">
+									<a>Abstract:</a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+								<div id="normal" style="padding-top:10px; color:#42dca3;">
+									<a>Normal:</a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+							</div>						
+						 
+							<input type="submit" class="btn btn-default btn-lg pull-right" value="Save">
+							<!--<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>-->
+						</form>
+				</div>
+			</div>
+			
+			<div class="col-md-2">
+				<h4 style="padding-top:35px;">Step 3 : Finish</h4>
 				<button type="button" id="reload" class="btn btn-default btn-sg" onclick="window.location='/php/sort.php';">Reload</button>	
 				<button type="button" id="finish" class="btn btn-default btn-sg pull-right">Finish</button>	
 			</div>
