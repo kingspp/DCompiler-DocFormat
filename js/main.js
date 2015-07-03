@@ -1,4 +1,4 @@
-var version = "BETA v2.3.6";
+var version = "BETA v2.3.9";
 var empty = 1;
 var id=1;
 var fileID=1;

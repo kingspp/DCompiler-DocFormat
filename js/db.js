@@ -27,8 +27,11 @@ function listf(){
 //function to delete respective files
 function delFile(head){
      $.post( "../php/db/deleteData.php",{ 'head': head});	 
-	 listf();
-	 showFiles();
+	 setTimeout(function(){
+		listf();
+		showFiles();
+	 },1000);
+	 
 }
 	
 
