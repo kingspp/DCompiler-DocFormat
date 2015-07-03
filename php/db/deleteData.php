@@ -33,4 +33,15 @@ if (strpos($head,'Table') !== false) {
 	fclose($fp);
 }
 
+if (strpos($head,'Image') !== false) {	
+	$string = file_get_contents("iList.json");
+	$json_a = json_decode($string, true);
+	$iId = $json_a['image'];
+	$iId--;
+	$json = array("image" => $iId);
+	$fp = fopen('iList.json', 'w');
+	fwrite($fp, json_encode($json));
+	fclose($fp);
+}
+
 ?>

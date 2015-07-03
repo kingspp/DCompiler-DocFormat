@@ -1,5 +1,10 @@
 <?php
 include 'db/dbinfo.php';
+
+$string = file_get_contents("db/iList.json");
+$json_a = json_decode($string, true);
+$iId = $json_a['image'];
+
 /*
 Server-side PHP file upload code for HTML5 File Drag & Drop demonstration
 Featured on SitePoint.com
@@ -39,9 +44,9 @@ else {
 				'../files/uploads/' . $fn
 			);
 			echo "<p>File $fn uploaded.</p>";
-			$sql = "INSERT INTO documents (Heading, Content) VALUES('Image', '$dir$fn');";
+			$sql = "INSERT INTO documents (Heading, Content) VALUES('Image $iId', '$dir$fn');";
 			if ($conn->query($sql) === TRUE) {	
-				$last_id = mysqli_insert_id($conn);
+				$last_id = mysqli_insert_id($conn);				
 				echo $last_id;
 			} 
 			else {
@@ -51,5 +56,11 @@ else {
 		}
 	}
 }
+$iId++;
+$json = array("image" => $iId);
+$fp = fopen('db/iList.json', 'w');
+fwrite($fp, json_encode($json));
+fclose($fp);
+
 header("Refresh: 1; url=http://localhost/");
 ?>
