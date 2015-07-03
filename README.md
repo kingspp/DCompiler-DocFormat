@@ -3,9 +3,9 @@
 **The Web-Application uses:**
 
 1. Bootstrap v3.3.5
-2. PHPWord Framework
-3. Jquery
-4. Directory Lister
+2. PHPWord Framework 0.12.4
+3. Jquery v2.1.4
+4. Directory Lister v2.5.6
 5. SitePoint File-Drag upload
 
 
