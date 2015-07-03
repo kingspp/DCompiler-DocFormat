@@ -59,30 +59,85 @@
 				<div id="customForm"  style="padding-top:25px">
 					<form id="form-content" action="php/db/insert.php" method="POST" accept-charset="UTF-8"
 						enctype="application/x-www-form-urlencoded"  validate>
-							<div class="form-group">
-								<div id="title" style="padding-top:10px; color:#42dca3;">
-									<a>Title:</a>
+							<p id="fStyle" style="padding-top:10px; color:#42dca3;">Font Style <i id="icn_plusFont" class="fa fa-plus-circle" style="font-size:25px; padding-left:20px;"></i></p>
+							<div class="form-group" id="fontStyle" style="display:none;">
+								<div id="title" style="color:#42dca3;">
+									<a><b>Title:</b></a>
 									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
 									<input type="checkbox" name="Bold" value="True">Bold
 									<input type="checkbox" name="Italic" value="True">Italic
 									<input type="checkbox" name="Caps" value="True">All Caps
 								</div>
 								<div id="abstract" style="padding-top:10px; color:#42dca3;">
-									<a>Abstract:</a>
+									<a><b>Abstract:</b></a>
 									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
 									<input type="checkbox" name="Bold" value="True">Bold
 									<input type="checkbox" name="Italic" value="True">Italic
 									<input type="checkbox" name="Caps" value="True">All Caps
 								</div>
 								<div id="normal" style="padding-top:10px; color:#42dca3;">
-									<a>Normal:</a>
+									<a><b>Normal:</b></a>
 									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
 									<input type="checkbox" name="Bold" value="True">Bold
 									<input type="checkbox" name="Italic" value="True">Italic
 									<input type="checkbox" name="Caps" value="True">All Caps
 								</div>
 							</div>						
-						 
+							
+							<p id="tStyle" style="color:#42dca3;">Table Style <i id="icn_plusTable" class="fa fa-plus-circle" style="font-size:25px; padding-left:20px;"></i></p>
+							<div class="form-group" id="tableStyle" style="display:none;">
+								<div id="title" style="color:#42dca3;">
+									<a><b>Title:</b></a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+								<div id="abstract" style="padding-top:10px; color:#42dca3;">
+									<a><b>Abstract:</b></a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+								<div id="normal" style="padding-top:10px; color:#42dca3;">
+									<a><b>Normal:</b></a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+							</div>						
+							
+							
+							<p id="pStyle" style="color:#42dca3;">Paragraph Style <i id="icn_plusPara" class="fa fa-plus-circle" style="font-size:25px; padding-left:20px;"></i></p>
+							<div class="form-group" id="paraStyle" style="display:none;">
+								<div id="title" style="color:#42dca3;">
+									<a><b>Title:</b></a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+								<div id="abstract" style="padding-top:10px; color:#42dca3;">
+									<a><b>Abstract:</b></a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+								<div id="normal" style="padding-top:10px; color:#42dca3;">
+									<a><b>Normal:</b></a>
+									<input type="text" class="form-control" id="fontName" name="fontName" placeholder="Font Name, Font Size" required>
+									<input type="checkbox" name="Bold" value="True">Bold
+									<input type="checkbox" name="Italic" value="True">Italic
+									<input type="checkbox" name="Caps" value="True">All Caps
+								</div>
+							</div>						
+							
+							
+							
+							
 							<input type="submit" class="btn btn-default btn-lg pull-right" value="Save">
 							<!--<button id="save" onclick="save();return false;" class="btn btn-default btn-lg pull-right">Save</button>-->
 						</form>

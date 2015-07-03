@@ -63,7 +63,21 @@
                         });
 						}
                 });
-				
+	
+	$("#icn_plusFont").click(function(){
+	$("#icn_plusFont").toggleClass("fa-plus-circle, fa-minus-circle ");	
+    $("#fontStyle").toggle();	
+	});
+	
+	$("#icn_plusTable").click(function(){
+	$("#icn_plusTable").toggleClass("fa-plus-circle, fa-minus-circle ");	
+    $("#tableStyle").toggle();	
+	});
+	
+	$("#icn_plusPara").click(function(){
+	$("#icn_plusPara").toggleClass("fa-plus-circle, fa-minus-circle ");	
+    $("#paraStyle").toggle();	
+	});
 	 
   
 

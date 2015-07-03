@@ -1,32 +1,16 @@
-var version = "BETA v2.3.9";
+var version = "BETA v2.4.0";
 var empty = 1;
 var id=1;
 var fileID=1;
 
-var defT=0;
-var defI=0;
 $("#tableBtn").click(function(){
-	$("#icn_plusT").toggleClass("fa-plus-circle, fa-minus-circle ");
-	if(defT==0){
-        $("#rcinput").show();		
-		defT=1;
-	}
-	else{
-		$("#rcinput").hide();		
-		defT=0;
-	}
+	$("#icn_plusT").toggleClass("fa-plus-circle, fa-minus-circle ");	
+    $("#rcinput").toggle();	
 });
 
 $("#imageBtn").click(function(){
 	$("#icn_plusI").toggleClass("fa-plus-circle, fa-minus-circle ");
-	if(defI==0){
-        $("#imginput").show();
-		defI=1;
-	}
-	else{
-		$("#imginput").hide();
-		defI=0;
-	}
+	$("#imginput").toggle();	
 });
 
 
