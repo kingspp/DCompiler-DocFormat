@@ -10,13 +10,13 @@
 
 
 
-The Web-Application requirements:
+**The Web-Application requirements:**
 
 1. PHP 5.3+
 2. MySQL 5.6.21
 
 
-The Web-Application uses languages:
+**The Web-Application uses languages:**
 
 1. HTML
 2. CSS3
