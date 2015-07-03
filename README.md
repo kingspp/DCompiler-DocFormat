@@ -1,6 +1,6 @@
 # DocuMat
 
-The Web-Application uses:
+**The Web-Application uses:**
 
 1. Bootstrap v3.3.5
 2. PHPWord Framework
@@ -13,7 +13,7 @@ The Web-Application uses:
 The Web-Application requirements:
 
 1. PHP 5.3+
-2. 
+2. MySQL 5.6.21
 
 
 The Web-Application uses languages:
@@ -23,3 +23,4 @@ The Web-Application uses languages:
 3. Java Script
 4. Jquery
 5. PHP
+6. JSON
