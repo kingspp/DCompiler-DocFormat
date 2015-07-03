@@ -99,8 +99,8 @@ $textrun->addText($read[2],'aFont');
 $section->addTextBreak($lineSpace);
 
 
-for($x=3 ; $x < sizeof($name); $x++){	
-	if($name[$x] == "Table"){	
+for($x=3 ; $x < sizeof($name); $x++){		
+	if (strpos($name[$x],'Table') !== false) {	
 	$arr = explode(',', $read[$x]);
 	$rows = $arr[0] ;
 	$cols = $arr[1] ;	
@@ -118,16 +118,14 @@ for($x=3 ; $x < sizeof($name); $x++){
 	}
 	$section->addTextBreak($lineSpace);	
 	}
-	else if($name[$x] == "Image"){
+	else if (strpos($name[$x],'Image') !== false){
 	$section->addImage($read[$x], array(null, null, 'align'=>'center'));
 	$section->addTextBreak($lineSpace);
 	
 	}
 	else{
-	$section->addListItem($name[$x], 0, 'hFont', 'multilevel','tStyle');
-	//echo $name[$x]."<br>";
-	$section->addText(htmlspecialchars($read[$x]),'nFont','nStyle');
-	//echo $read[$x]."<br>";
+	$section->addListItem($name[$x], 0, 'hFont', 'multilevel','tStyle');	
+	$section->addText(htmlspecialchars($read[$x]),'nFont','nStyle');	
 	$section->addTextBreak($lineSpace);
 	}
 }

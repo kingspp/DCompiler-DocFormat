@@ -1,6 +1,11 @@
 <?php
 include 'dbinfo.php';
 
+$string = file_get_contents("tList.json");
+$json_a = json_decode($string, true);
+$tId = $json_a['table'];
+
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -21,14 +26,29 @@ for ($x = 0; $x < $rows; $x++){
 array_unshift($arr, $rows,$cols);
 $str = implode (", ", $arr);
 
-$sql = "INSERT INTO documents (Heading, Content) VALUES('Table', '$str');";
+$sql = "INSERT INTO documents (Heading, Content) VALUES('Table $tId', '$str');";
 if ($conn->query($sql) === TRUE) {	
 	$last_id = mysqli_insert_id($conn);
-   header("Refresh: 1; url=http://localhost/");
+	$tId++;
+    header("Refresh: 1; url=http://localhost/");
 } 
 else {
 	echo "FAIL"; 
     //echo "Error: " . $sql . "<br>" . $conn->error;	 	
 }
+
+//Create a JSON File (Only once)
+
+$json = array("table" => $tId);
+$fp = fopen('tList.json', 'w');
+fwrite($fp, json_encode($json));
+fclose($fp);
+
+
+
+
+
+
+
 
 ?>

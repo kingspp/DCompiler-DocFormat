@@ -21,4 +21,16 @@ if (mysqli_query($conn, $sql)) {
 
 mysqli_close($conn);
 
+//Correct Table Numbering
+if (strpos($head,'Table') !== false) {	
+	$string = file_get_contents("tList.json");
+	$json_a = json_decode($string, true);
+	$tId = $json_a['table'];
+	$tId--;
+	$json = array("table" => $tId);
+	$fp = fopen('tList.json', 'w');
+	fwrite($fp, json_encode($json));
+	fclose($fp);
+}
+
 ?>
