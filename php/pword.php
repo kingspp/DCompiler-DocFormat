@@ -73,8 +73,8 @@ $section = $phpWord->addSection(
         'breakType' => 'continuous',
     )
 );
-$section->addText(htmlspecialchars("Author 1"));
-$section->addText(htmlspecialchars("Author 2"));
+$section->addText(htmlspecialchars($read[01]),null, null);
+$section->addText(htmlspecialchars($read[02]),null, null);
 
 
 
@@ -89,17 +89,17 @@ $section = $phpWord->addSection(
 //Abstract
 $textrun = $section->createTextRun();
 $textrun->addText("Abstract-",'aFonti');
-$textrun->addText($read[1],'aFont');
+$textrun->addText($read[3],'aFont');
 $section->addTextBreak($lineSpace);
 
 //Keywords
 $textrun = $section->createTextRun();
 $textrun->addText("Keywords-",'aFonti');
-$textrun->addText($read[2],'aFont');
+$textrun->addText($read[4],'aFont');
 $section->addTextBreak($lineSpace);
 
 
-for($x=3 ; $x < sizeof($name); $x++){		
+for($x=4 ; $x < sizeof($name); $x++){		
 	if (strpos($name[$x],'Table') !== false) {	
 	$arr = explode(',', $read[$x]);
 	$rows = $arr[0] ;
