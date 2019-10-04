@@ -155,7 +155,7 @@ for ($x = 0; $x < 3; $x++){
 	echo $read[$x].'<br><br>';
 }
 */
-header("Refresh: 1; url=http://localhost/download.html");
+header("Refresh: 1; url="/download.html");
 
 /* Note: we skip RTF, because it's not XML-based and requires a different example. */
 /* Note: we skip PDF, because "HTML-to-PDF" approach is used to create PDF documents. */
