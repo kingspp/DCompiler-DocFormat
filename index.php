@@ -92,13 +92,11 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section text-center" style="margin-bottom: -200px;">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About DocuMat</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+                <p>Formatting is always a pain! How about an automated formatter to format your paper to conference styles (IEEE)? Documat - The name "Docu" - Document and "Mat"- Format helps to ease the formatting issue of papers.</p>
             </div>
         </div>
     </section>
@@ -193,10 +191,10 @@
         <div class="container">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact DocuMat</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p>Feel free to email us to provide some feedback on our application, </p>
                 <p><a href="mailto:dcompiler23@gmail.com">dcompiler23@gmail.com</a>
                 </p>
-                <ul class="list-inline banner-social-buttons">
+                <!-- <ul class="list-inline banner-social-buttons">
                     <li>
                         <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
@@ -206,7 +204,7 @@
                     <li>
                         <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>
 		</div>
