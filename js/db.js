@@ -1,8 +1,10 @@
 //function to list the files
 function listf(){
+	console.log("Lift F Called");
 	$.ajax({
+
             type:"POST",
-            url:"php/db/display.php",			
+            url:"../php/db/display.php",			
             data:{action:"showFiles"},
 			dataType:"json",
             success:function(data){
@@ -14,12 +16,32 @@ function listf(){
 					var ni1 = document.getElementById('delFile');
 					var newdiv = document.createElement('div');
 					var newdiv1 = document.createElement('div');
-					newdiv.innerHTML = '<a href="/php/db/displayData.php?head='+data[i].replace('<br/>', '')+'" id='+data[i]+' style="font-size:20px;">'+data[i]+'</a>';
+					newdiv.innerHTML = '<a href="../php/db/displayData.php?head='+data[i].replace('<br/>', '')+'" id='+data[i]+' style="font-size:20px;">'+data[i]+'</a>';
 					newdiv1.innerHTML= "<a onclick='delFile(\"" + data[i].replace('<br/>', '') + "\");'><i class='fa fa-trash-o' style='padding:7px;'></i></a>";
 					//newdiv1.innerHTML = '<a onClick="delFile('+data[i].replace('<br/>', '')+');" id='+data[i]+'><i class="fa fa-trash-o" style="padding:7px;"></i></a>';
 					ni.appendChild(newdiv); 
 					ni1.appendChild(newdiv1);
+					console.log(ni);
 				}				
+            },
+            error:function(error){
+            	console.log('In erro')
+            	console.log(error);
+            	$('#FMStatus').html("Files List");
+				 $('#fileList').empty();
+				 $('#delFile').empty();				 
+				for(var i=0 ; i<data.length ; i++){				
+					var ni = document.getElementById('fileList');
+					var ni1 = document.getElementById('delFile');
+					var newdiv = document.createElement('div');
+					var newdiv1 = document.createElement('div');
+					newdiv.innerHTML = '<a href="../php/db/displayData.php?head='+data[i].replace('<br/>', '')+'" id='+data[i]+' style="font-size:20px;">'+data[i]+'</a>';
+					newdiv1.innerHTML= "<a onclick='delFile(\"" + data[i].replace('<br/>', '') + "\");'><i class='fa fa-trash-o' style='padding:7px;'></i></a>";
+					//newdiv1.innerHTML = '<a onClick="delFile('+data[i].replace('<br/>', '')+');" id='+data[i]+'><i class="fa fa-trash-o" style="padding:7px;"></i></a>';
+					ni.appendChild(newdiv); 
+					ni1.appendChild(newdiv1);
+					console.log(ni);
+				}
             }
         });
 	}
@@ -41,7 +63,7 @@ function showFiles(){
 	var myDiv = document.getElementById("myDiv");
         $.ajax({
             type:"POST",
-            url:"php/db/display.php",			
+            url:"../php/db/display.php",			
             data:{action:"showFiles"},
 			dataType:"json",
             success:function(data){
@@ -60,7 +82,7 @@ function showFiles(){
 function deleteall(){
 	 $.ajax({
             type:"POST",
-            url:"php/db/deleteall.php",
+            url:"../php/db/deleteall.php",
             data:{action:"deleteall"},
             success:function(data){
                $('#myDiv').empty();

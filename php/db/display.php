@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     }
 	echo json_encode($res);
 } else {
-    //echo "";
+    echo "No Results";
 }
 
 //}
