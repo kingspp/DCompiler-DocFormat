@@ -1,7 +1,5 @@
 {
-    "config": {
-        "platform": {
-            "php": "5.6.1"
-        }
-    }
+  "require": {
+    "php": "^5.6.0"
+  }
 }
